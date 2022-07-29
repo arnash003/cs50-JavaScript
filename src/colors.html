@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Colors</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // document.querySelectorAll('button').forEach(button => {
+            //     button.onclick = function () {
+            //         document.querySelector('#hello').style.color = button.dataset.color;
+            //     }
+            // })
+
+            document.querySelector('select').onchange = function () {
+                document.querySelector('#hello').style.color = this.value;
+            }
+        });
+
+            // We have special value called "this" which has special meaning in JavaScript and whose meaning changes according to the context
+            // 'this' is in the context of the above function which is an event listener is the thing that receieved the event.
+            // The select drop down received the event.
+
+            // the arrow function is just a shothand syntax for creating a function. Whatever is to the left of the arrow sign
+            // is the input to the function and whatever is to the right of the arrow is what should be run when the function is called upon
+
+            // To acccess all of the buttons we can use the forEach function that accepts as an argument another function to run a function forEach of the elements in the array or Node List
+//  We add an event listener to the document at the top. When the page is done loading we are going to document.querySelector all of the documents
+// Then we say, forEach of the buttons, we want to run a function on each of the buttons. The same function for each button. 
+// What is that function? The function is function(button) that takes input the button and adds an onclick handler that runs another function when the button is clicked on.
+// So we, get the 'hello' element and change its color to button.dataset.color.
+// Change font color to red
+                // document.querySelector('#red').onclick = function() {
+                //     // Change the style properties. When you click on the hello button, it will find the hello element and update its color
+                //     // to red
+                //     document.querySelector('#hello').style.color ='red';
+                // }
+                // document.querySelector('#blue').onclick = function() {
+                //     // Change the style properties. When you click on the hello button, it will find the hello element and update its color
+                //     // to blue
+                //     document.querySelector('#hello').style.color ='blue';
+                // }
+                // document.querySelector('#green').onclick = function() {
+                //     // Change the style properties. When you click on the hello button, it will find the hello element and update its color
+                //     // to green
+                //     document.querySelector('#hello').style.color ='green';
+                // }
+                // The above is not optimal design. We can write the above in one function. We can add data attributes to our html elements
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <h1 id="hello">Hello</h1>
+    <!-- <button data-color="red">Red</button>
+        <button data-color="blue">Blue</button>
+        <button data-color="green">Green</button> -->
+
+    <select>
+        <option value="black">Black</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+    </select>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang=" en">
+
+<head>
+    <title>Events in JavaScript</title>
+    <script>
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            document.querySelector('form').onsubmit = function () {
+
+                const name = document.querySelector('#name').value;
+                alert(`Hello, ${name}!`);
+
+
+
+                //    .value is getting access to its value.. We run a constant because name is never going to change.
+                // Const is equal to document.querySelector. We then get the element whose ID is 'name' and get access to its value.
+
+            };
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <h1>Hello</h1>
+    <form>
+        <input autofocus id="name" placeholder="Name" type="text">
+        <input type="submit">
+    </form>
+</body>
+
+</html>
+
+
+<!-- querySelector 
+document.querySelector('tag')
+document.querySelector('#id')
+document.querySelector('.class')
+-->
+<!-- Combine functions, querySelectors, and event listeners -->

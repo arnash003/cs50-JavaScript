@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tasks</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // By default the submit button should be disabled and only when you lift your key up it should be enabled
+
+
+// When I first load the page, take the submit button and disable it and set .disabled = true 
+// Then any time I type a key run the function .onkeyup = () => 
+           
+
+
+document.querySelector('#submit').disabled = true;
+            document.querySelector('#task').onkeyup = () => {
+                if (document.querySelector('#task').value.length > 0) {
+                    document.querySelector('#submit').disabled = false;
+                } else {
+                    document.querySelector('#submit').disabled = true;
+                }
+            }
+            document.querySelector('form').onsubmit = () => {
+                const task = document.querySelector('#task').value;
+
+                const li = document.createElement('li');
+                li.innerHTML = task;
+
+                document.querySelector('#tasks').append(li);
+
+                document.querySelector('#task').value = '';
+                document.querySelector('#submit').disabled = true;
+
+                // Stop the form from submitting
+                return false;
+            }
+        });
+            // get me the ekement whose id is task and if you have an html , you can add a new element inside of it using append(li);
+            // The new element we created using createElement is being added to the DOM, to the unordered list
+            // We also want to clear the value of input field when a task is submitted which we do using document.querySelector('task').value = '';
+            // Create a new element to add to the body of the html.
+            // run a function called document.CreateElement
+            // We also dont want to user to submit a task if they havent written a task. We can use the disabled function
+
+    </script>
+</head>
+
+<body>
+    <h1>Tasks</h1>
+    <ul id="tasks">
+    </ul>
+    <form>
+        <input id="task" placeholder="New Task" type="text">
+        <input id="submit" type="submit">
+    </form>
+</body>
+
+</html>
